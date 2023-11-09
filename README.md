@@ -2,7 +2,7 @@
 ***!WIP!***
 simple Python Colorpicker
 
-##Intended Features:
+## Intended Features:
 - copy to Clipboard
 - Click to Display Color
 - Select color via RGB Slider
