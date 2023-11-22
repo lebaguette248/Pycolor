@@ -1,11 +1,19 @@
 import tkinter as tk
-import pyautogui
+import pyautogui as pyautogui
 
 
+def getColorOnMouse():
+    positionx = pyautogui.position()[0]
+    positiony = pyautogui.position()[1]
+    red = pyautogui.pixel(positionx, positiony)[0]
+    green = pyautogui.pixel(positionx, positiony)[1]
+    blue = pyautogui.pixel(positionx, positiony)[2]
 
-#def get_pixel_color(x, y):
- #   color = pyautogui.pixel(x, y)
-  #  return color
+    red_slider.set(red)
+    green_slider.set(green)
+    blue_slider.set(blue)
+    color_label.config(bg=f'#{red:02X}{green:02X}{blue:02X}')
+    color_label_rgbval.config(text=f'#{red:02X}{green:02X}{blue:02X}')
 
 
 def update_values():
@@ -15,8 +23,10 @@ def update_values():
     color_label.config(bg=f'#{red_value:02X}{green_value:02X}{blue_value:02X}')
     color_label_rgbval.config(text=f'#{red_value:02X}{green_value:02X}{blue_value:02X}')
 
+
 root = tk.Tk()
 root.title("RGB Schieberegler")
+
 
 red_slider = tk.Scale(root, from_=0, to=255, orient="horizontal", label="Rot")
 red_slider.pack()
@@ -36,9 +46,11 @@ color_label.pack()
 color_label_rgbval = tk.Label(root, bg="#FFF", fg="black", width=20)
 color_label_rgbval.pack()
 
+button = tk.Button(root, text="get Pixel Color", command=getColorOnMouse())
+button.pack(padx=20, pady=20)
+
 red_slider.bind("<Motion>", lambda event: update_values())
 green_slider.bind("<Motion>", lambda event: update_values())
 blue_slider.bind("<Motion>", lambda event: update_values())
-
 
 root.mainloop()
