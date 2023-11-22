@@ -1,13 +1,18 @@
 import tkinter as tk
 import pyautogui as pyautogui
+import time
 
 
 def getColorOnMouse():
+    time.sleep(3)
     positionx = pyautogui.position()[0]
     positiony = pyautogui.position()[1]
     red = pyautogui.pixel(positionx, positiony)[0]
     green = pyautogui.pixel(positionx, positiony)[1]
     blue = pyautogui.pixel(positionx, positiony)[2]
+
+    #debug
+    print(red, green, blue)
 
     red_slider.set(red)
     green_slider.set(green)
@@ -46,7 +51,7 @@ color_label.pack()
 color_label_rgbval = tk.Label(root, bg="#FFF", fg="black", width=20)
 color_label_rgbval.pack()
 
-button = tk.Button(root, text="get Pixel Color", command=getColorOnMouse())
+button = tk.Button(root, text="get Pixel Color", command=getColorOnMouse)
 button.pack(padx=20, pady=20)
 
 red_slider.bind("<Motion>", lambda event: update_values())
