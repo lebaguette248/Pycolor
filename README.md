@@ -10,9 +10,8 @@ simple Python Colorpicker
 
 ## Usage
 
-You can use this code as a starting point for projects that require color manipulation.
-Customize the code as needed and integrate it into your applications.
-Can also be Used as a Standalone Colorpicker.
+Can be used as standalone Colorpicker,
+ or as starting point for porjects requiring color picker functionality.
 
 ## Requirements
 
