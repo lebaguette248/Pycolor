@@ -20,3 +20,5 @@ Ensure Python is installed and install the required libraries with:
 ```bash
 pip install pyautogui
 pip install TKInter
+pip install pyclip
+
