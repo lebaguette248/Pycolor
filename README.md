@@ -11,7 +11,7 @@ simple Python Colorpicker
 ## Usage
 
 Can be used as standalone Colorpicker,
- or as starting point for porjects requiring color picker functionality.
+ or as starting point for projects requiring color picker functionality.
 
 ## Requirements
 
